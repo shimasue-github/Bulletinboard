@@ -1,0 +1,175 @@
+/*基本*/
+html, body {
+    background:black;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    height: 100vh;
+    margin: 0;
+}
+
+/*個人*/
+.kensaku{
+    background-color:white;
+    width: 300px;
+    height:300px;
+    border-radius: 50%;
+    margin-top:50px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.image{
+    width: 300px;
+    height:300px;
+    border-radius: 50%;
+}
+.center{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.right{
+    text-align:right;
+    margin-left: auto;
+    margin-right: auto; 
+}
+.left{
+    text-align:left;
+    margin-left: auto;
+    margin-right: auto; 
+}
+.line{
+    background-color:white;
+    color:black;
+    font-size: 10px;
+    width: auto;
+    height: 14px;
+    text-align:center;
+    text-decoration: none;
+}
+.white{
+    background-color: rgba(255, 255, 255, 0.101);
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto; 
+}
+.comename{
+  color: white;
+  font-size: 16px;
+}
+.comebun{
+    color: white;
+    font-size: 12px;
+}
+.big{
+    font-size: 200px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*テキスト*/
+.text{
+    background-color:rgba(255, 255, 255, 0.479);
+    margin:5px;
+    margin-right: 20px;
+    padding:20px;
+    width: 400px;;
+    outline:none;
+    border-radius: 5px;
+    border:none;
+    cursor:pointer;
+    appearance:none;
+}
+.textblack{
+    background-color:black;
+    color: white;
+    margin:5px;
+    margin-right: 20px;
+    padding:20px;
+    width:200px;
+    outline:none;
+    border-radius: 5px;
+    border:none;
+    cursor:pointer;
+    appearance:none;
+}
+.in{
+    background-color:black;
+    color:white;
+    margin:5px;
+    margin-right: 20px;
+    padding:20px;
+    width:90%;
+    outline:none;
+    border-radius: 5px;
+    border:1px solid white;
+    cursor:pointer;
+    appearance:none;
+}
+.back{
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+/*ボタン*/
+.blackbutton{
+    background-color:black;
+    color: white;
+    padding:10px;
+    outline:none;
+    border-radius: 5px;
+    border:none;
+    cursor:pointer;
+    appearance:none;
+}
+.whitebutton{
+    background-color:white;
+    color: black;
+    padding:10px;
+    outline:none;
+    border-radius: 5px;
+    border:none;
+    cursor:pointer;
+    appearance:none;
+}
+.syousai{
+    background-image: url(../image/ringotop.png);
+ padding:0;
+ width: 40px;
+ height:20px;
+ outline:none;
+ border:none;
+ cursor:pointer;
+ appearance:none;
+ margin-left:50px;
+}
+
+/*テーブル*/
+.table{
+    margin-top: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    outline:none;
+}
+.tdtop{
+    background-color: rgba(255, 255, 255, 0.361);
+    color: white;
+    height: 40px;
+    width: auto;
+}
+.trtop{
+    background-color: rgba(255, 255, 255, 0.062);
+    color: white;
+    height: 40px;
+    width: auto;
+}
+
