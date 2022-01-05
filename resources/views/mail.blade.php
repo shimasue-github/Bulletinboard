@@ -6,4 +6,4 @@
 </style>
 <p>本登録に進んでください！
 
-<h3>http://localhost:8888/register?mail={{$mail}}&token={{$token}}</h3>
+<h3>http://127.0.0.1:8000/register?mail={{$mail}}&token={{$token}}</h3>
