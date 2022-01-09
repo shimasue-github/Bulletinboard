@@ -1,78 +1,33 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-<title>Laravel top</title>
-
-<!-- Fonts -->
+<title>WELCOME</title>
+<!-- fonts読み込み -->
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-
-<!-- Styles -->
-<style>
-html, body {
-    background-image:url(../image/ringotop.png);
-    color: white;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 200;
-    height: 100vh;
-    margin: 0;
-}
-p{
-    margin-left:30px;
-}
-.full-height {
-    height: 100vh;
-}
-.flex-center {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-.position-ref {
-    position: relative;
-}
-.top-right {
-    position: absolute;
-    right: 10px;
-    top: 18px;
-}
-.content {
-    text-align: center;
-}
-.title {
-    font-size: 84px;
-}
-.links > a {
-    color: white;
-    padding: 0 25px;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: .1rem;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-.m-b-md {
-    margin-bottom: 30px;
-}
-</style>
-
+<!-- css読み込み -->
+<link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
 </head>
 <body>
-  <nav class="flex-center position-ref full-height">
-    @if (Route::has('login'))
-      <div class="top-right links">
-          @auth
-          <a href="{{ url('/home') }}">マイページ</a>
-          @else
-          <a href="{{ route('login') }}">ログイン</a>
-          @if (Route::has('register'))
-          <a href="{{ url('/send') }}">新規会員登録</a>
-          @endif
-          @endauth
-      </div>
-          @endif
-      <div class="title m-b-md">
-          WELCOME
-      </div>
-  </nav>
+    <div id="field">
+        <div id="particles-js"></div>
+        <div id="wrapper">
+            <div id="field_text"></div>
+        </div>
+    </div>
+    <main>
+        <div id="container">
+            <p><a href="{{ route('login') }}">ログイン</a></p>
+            <p><a href="{{ url('/send') }}">新規会員登録</a></p>
+        </div>
+    </main>
+</div>
+<!-- particle.js -->
+<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<!-- Jquery読み込み -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<!-- progressbar.js読み込み -->
+<script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
+<!-- javascript読み込み -->
+<script src="{{ asset('/js/welcome.js') }}"></script>
 </body>
 </html>
