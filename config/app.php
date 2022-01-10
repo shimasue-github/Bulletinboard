@@ -1,85 +1,22 @@
 <?php
-
 return [
-
-    /*
-    |--------------------------------------------------------------------------
-    | Application Name
-    |--------------------------------------------------------------------------
-    |
-    | This value is the name of your application. This value is used when the
-    | framework needs to place the application's name in a notification or
-    | any other location as required by the application or its packages.
-    |
-    */
-
-    'name' => env('APP_NAME', 'Laravel'),
-
-    /*
-    |--------------------------------------------------------------------------
-    | Application Environment
-    |--------------------------------------------------------------------------
-    |
-    | This value determines the "environment" your application is currently
-    | running in. This may determine how you prefer to configure various
-    | services the application utilizes. Set this in your ".env" file.
-    |
-    */
-
+    //アプロケーション名
+    'name' => env('APP_NAME', 'Bulletin board'),
+    //環境を設定するファイルを.envファイルに設定
     'env' => env('APP_ENV', 'production'),
-
-    /*
-    |--------------------------------------------------------------------------
-    | Application Debug Mode
-    |--------------------------------------------------------------------------
-    |
-    | When your application is in debug mode, detailed error messages with
-    | stack traces will be shown on every error that occurs within your
-    | application. If disabled, a simple generic error page is shown.
-    |
-    */
-
+    //デバック設定 true or false
     'debug' => (bool) env('APP_DEBUG', false),
-
-    /*
-    |--------------------------------------------------------------------------
-    | Application URL
-    |--------------------------------------------------------------------------
-    |
-    | This URL is used by the console to properly generate URLs when using
-    | the Artisan command line tool. You should set this to the root of
-    | your application so that it is used when running Artisan tasks.
-    |
-    */
-
-    'url' => env('APP_URL', 'http://localhost'),
-
+    //コンソールを使用する際適切なURLを設定
+    'url' => env('APP_URL', 'http://127.0.0.1:8000'),
     'asset_url' => env('ASSET_URL', null),
-
-    //アプリの時間帯設定
-
+    //タイムゾーン
     'timezone' => 'Asia/Tokyo',
-
-    //エラーメッセージ日本語化
-
+    //言語設定
     'locale' => 'ja',
-
-    //言語フォルダに対応するロケールの言語がない場合に使用される言語の設定「en」のままにしておく
-
-    'fallback_locale' => 'en',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Faker Locale
-    |--------------------------------------------------------------------------
-    |
-    | This locale will be used by the Faker PHP library when generating fake
-    | data for your database seeds. For example, this will be used to get
-    | localized telephone numbers, street address information and more.
-    |
-    */
-
-    'faker_locale' => 'en_US',
+    //指定された言語がない場合の言語設定
+    'fallback_locale' => 'ja',
+    //ダミーデータの日本語化
+    'faker_locale' => 'ja_JP',
 
     /*
     |--------------------------------------------------------------------------
@@ -93,7 +30,6 @@ return [
     */
 
     'key' => env('APP_KEY'),
-
     'cipher' => 'AES-256-CBC',
 
     /*

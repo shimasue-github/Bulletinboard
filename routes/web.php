@@ -3,6 +3,7 @@
 
 //認証機能ルートまとめ Illuminate\Support\Facades\Auth.php
 Auth::routes();
+
 //サイトトップ画面
 Route::get('/', function () {return view('welcome');});
 

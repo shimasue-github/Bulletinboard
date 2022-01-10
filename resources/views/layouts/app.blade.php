@@ -27,9 +27,9 @@
             <ul class="navbar-nav ml-auto"></ul>
             <!-- Authentication Links -->
             @guest
-            <a class="nav-item">
+            <!-- <a class="nav-item">
                 <a id="podisyon" href="{{ route('login') }}">ログイン</a>
-            </a>
+            </a> -->
             @if (Route::has('register'))
             @endif
             @else
