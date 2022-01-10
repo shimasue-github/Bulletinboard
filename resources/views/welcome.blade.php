@@ -2,6 +2,8 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
 <title>WELCOME</title>
+<!-- レスポンシブ対応読み込み -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <!-- fonts読み込み -->
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
 <!-- css読み込み -->
@@ -16,8 +18,8 @@
     </div>
     <main>
         <div id="container">
-            <p><a href="{{ route('login') }}">ログイン</a></p>
-            <p><a href="{{ url('/send') }}">新規会員登録</a></p>
+            <p><a href="{{ route('login') }}" class="btn welcome"><span>ログイン</span></a></p>
+            <p><a href="{{ url('/send') }}" class="btn welcome"><span>新規会員登録</span></a></p>
         </div>
     </main>
 </div>

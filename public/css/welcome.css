@@ -4,6 +4,34 @@ html, body {
     height: 100vh;
     margin: 0;
 }
+@media screen and (max-width: 480px){
+    body{
+        background-image:url(../image/welcomephone.png);
+        position:absolute; 
+        width: 100%; 
+        height: 100%; 
+        background-color: #222121; 
+        background-repeat: no-repeat; 
+        background-size: cover; 
+        background-position: 50% 50%; 
+    }
+ }
+@media screen and (min-width: 481px){
+    body{
+        background-image:url(../image/welcomecomputer.png);
+        position:absolute; 
+        width: 100%; 
+        height: 100%; 
+        background-color: #222121; 
+        background-repeat: no-repeat; 
+        background-size: cover; 
+        background-position: 50% 50%; 
+    }
+ }
+
+
+
+/* ローディング画面 */
 #field {
     position: fixed;
     z-index: 999;
@@ -25,19 +53,13 @@ html, body {
 #container{
     width:100%;
     height: 100vh;
-    background: #222121;
+   
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
-body{ 
-    margin:0; font:normal 75% Arial, Helvetica, sans-serif; 
-} 
-canvas{ 
-    display: block; 
-    vertical-align: bottom; 
-} 
+
 /* particle.js */ 
 #particles-js{ 
     position:absolute; 
@@ -77,4 +99,50 @@ canvas{
 } 
 .count-particles{ 
     border-radius: 0 0 3px 3px; 
+}
+
+/* welcomeボタン */
+.btn{
+    /*アニメーションの起点とするためrelativeを指定*/
+    position: relative;
+	overflow: hidden;
+    /*ボタンの形状*/
+	text-decoration: none;
+	display: inline-block;
+   	border: 1px solid #c3d825;/* ボーダーの色と太さ */
+    padding: 10px 30px;
+    text-align: center;
+    outline: none;
+    /*アニメーションの指定*/   
+    transition: ease .2s;
+    margin: 10px;
+    width: 100px;
+}
+.btn span {
+	position: relative;
+	z-index: 3;/*z-indexの数値をあげて文字を背景よりも手前に表示*/
+	color:#c3d825;
+}
+.btn:hover span{
+	color:#fff;
+}
+/*== 背景が流れる（左から右） */
+.welcome:before {
+ 	content: '';
+ 	position: absolute;
+ 	top: 0;
+ 	left: 0;
+ 	z-index: 2;
+    /*色や形状*/
+ 	background:#c3d8257e;/*背景色*/
+ 	width: 100%;
+	height: 100%;
+    /*アニメーション*/
+ 	transition: transform .6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+ 	transform: scale(0, 1);
+	transform-origin: right top;
+}
+.welcome:hover:before{
+	transform-origin:left top;
+	transform:scale(1, 1);
 }
