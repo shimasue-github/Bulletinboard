@@ -10,6 +10,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
 <!-- css読み込み -->
 <link rel="stylesheet" href="{{ asset('css/user.css') }}">
+<style>
+    table{
+    text-align: center;
+	color:#c3d825;
+    height: 270px;
+    width: 350px;
+    }
+    form{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 200px;
+    }
+</style>
 </head> 
 <body>
 <form method="POST" action="{{ route('login') }}">
