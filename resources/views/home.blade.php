@@ -7,9 +7,14 @@
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
 <!-- Styles -->
-<link rel="stylesheet" href="{{ asset('css/all.css') }}">
-<link rel="stylesheet" href="{{ asset('css/user.css') }}">
+<link rel="stylesheet" href="{{ asset('css/common.css') }}">
+<link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
 <style>
+    .logo{
+        width:120px;
+        height:120px;
+        text-align:center;
+    }
     body{
         background-color:#222121; 
     }
@@ -43,6 +48,7 @@
 </style>
 </head>
 <body>
+<div class="logo"><img src="{{ asset('image/jobchat.png') }}" class="logo" alt="ロゴ"><br></div>
 <div class="openbtn"><span></span><span></span><span></span></div>
 <nav id="g-nav">
     <table width=100% class="menu_bar">

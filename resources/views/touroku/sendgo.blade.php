@@ -3,20 +3,30 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-<title>Laravel sendgo</title>
-
+<title>THANK</title>
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-
 <!-- Styles -->
 <link rel="stylesheet" href="{{ asset('css/all.css') }}">
-
-<table class="center"  width="90%" height="90%">
-   <tr><td><div class="big">THANKS</div></td></tr>
-</table>   
-
-  
-  <div class="container">
+<style>
+    table{
+    text-align: center;
+    color:#c3d825;
+    height: 40px;
+    margin-top:70% ;
+    margin-left: auto;
+    margin-right: auto;
+    }
+</style>
+<!-- css読み込み -->
+<link rel="stylesheet" href="{{ asset('css/common.css') }}">
+<link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
+</hard>
+<body>
+    <table>
+        <p>メールを送信しました。</p>
+    </table>
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -33,7 +43,5 @@
     </div>
 </div>
 @endsection  
+</body>
 
-<header class="line">
-    {{$mail}}に本登録メールを送信しました！
-</header>  

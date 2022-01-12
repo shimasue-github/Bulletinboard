@@ -1,45 +1,10 @@
-html, body {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 200;
-    height: 100vh;
-    margin: 0;
-}
-@media screen and (max-width: 480px){
-    body{
-        background-image:url(../image/welcomephone.png);
-        position:absolute; 
-        width: 100%; 
-        height: 100%; 
-        background-color: #222121; 
-        background-repeat: no-repeat; 
-        background-size: cover; 
-        background-position: 50% 50%; 
-    }
- }
-@media screen and (min-width: 481px){
-    body{
-        background-image:url(../image/welcomecomputer.png);
-        position:absolute; 
-        width: 100%; 
-        height: 100%; 
-        background-color: #222121; 
-        background-repeat: no-repeat; 
-        background-size: cover; 
-        background-position: 50% 50%; 
-    }
- }
-
-
-
 /* ローディング画面 */
 #field {
     position: fixed;
     z-index: 999;
     width: 100%;
     height: 100%;
-    background:#c3d825;
     text-align:center;
-    color:#fff;
 }
 #field_text {
     position: absolute;
@@ -53,31 +18,27 @@ html, body {
 #container{
     width:100%;
     height: 100vh;
-   
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
-
 /* particle.js */ 
 #particles-js{ 
     position:absolute; 
     width: 100%; 
     height: 100%; 
     background-color: #222121; 
-    background-image: url(""); 
     background-repeat: no-repeat; 
     background-size: cover; 
     background-position: 50% 50%; 
 }  
 .count-particles{ 
-    background: #222121; 
+    background: #000022; 
     position: absolute; 
     top: 48px; 
     left: 0; 
     width: 80px; 
-    color: #13E8E9; 
     font-size: .8em; 
     text-align: left; 
     text-indent: 4px; 
@@ -101,34 +62,34 @@ html, body {
     border-radius: 0 0 3px 3px; 
 }
 
-/* welcomeボタン */
+/*== ボタン共通設定 */
 .btn{
-    /*アニメーションの起点とするためrelativeを指定*/
     position: relative;
 	overflow: hidden;
-    /*ボタンの形状*/
 	text-decoration: none;
+    font-weight: bold;
 	display: inline-block;
-   	border: 1px solid #c3d825;/* ボーダーの色と太さ */
+   	border: 2px solid #c3d825;/* ボーダーの色と太さ */
     padding: 10px 30px;
     text-align: center;
-    outline: none;
-    /*アニメーションの指定*/   
+    outline: none;  
     transition: ease .2s;
     margin: 10px;
     width: 100px;
 }
 .btn span {
 	position: relative;
-	z-index: 3;/*z-indexの数値をあげて文字を背景よりも手前に表示*/
+	z-index: 3;
 	color:#c3d825;
 }
 .btn:hover span{
 	color:#fff;
 }
+
 /*== 背景が流れる（左から右） */
 .welcome:before {
  	content: '';
+    /*絶対配置で位置を指定*/
  	position: absolute;
  	top: 0;
  	left: 0;
@@ -142,7 +103,54 @@ html, body {
  	transform: scale(0, 1);
 	transform-origin: right top;
 }
+/*hoverした際の形状*/
 .welcome:hover:before{
 	transform-origin:left top;
 	transform:scale(1, 1);
+}
+
+
+
+.btnarrow4{
+    /*矢印と下線の基点とするためrelativeを指定*/
+	position: relative;
+    /*形状*/
+    display: inline-block;
+	padding: 0 20px;
+    color: #c3d825;
+    text-decoration: none;
+    outline: none;
+}
+.btnarrow4::before{
+    content: '';
+    /*絶対配置で下線の位置を決める*/
+	position: absolute;
+    bottom:-8px;
+    left:15%;
+    /*下線の形状*/    
+    width: 85%;
+    height: 1px;
+	background:#c3d825;
+    /*アニメーションの指定*/
+    transition: all .3s;
+}
+.btnarrow4::after{
+    content: '';
+    /*絶対配置で矢印の位置を決める*/
+	position: absolute;
+    bottom:-3px;
+    right:0;
+    /*矢印の形状*/    
+    width: 15px;
+    height:1px;
+	background:#c3d825;
+    transform: rotate(35deg);
+    /*アニメーションの指定*/
+    transition: all .3s;
+}
+.btnarrow4:hover::before{
+    left:20%;
+}
+.btnarrow4:hover::after{
+    right:-5%;
 }

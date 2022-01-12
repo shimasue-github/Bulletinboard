@@ -1,0 +1,39 @@
+#共通css
+
+html,body {
+    background-color: #222121; 
+    color: #c3d825;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    cursor: pointer;
+    margin: 0;
+    width: 100%;  
+    height: 100vh;
+    position:absolute; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: 50% 50%; 
+}
+h1{
+	color:#c3d825;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+.textbox{
+    background-color: transparent;
+    color: #fff;
+    border:1px #c3d825 solid;
+    padding: 5px;  
+    font-size: 18px;
+    outline: none;
+}
+.button{
+    background-color: #c3d825;
+    color: #fff;
+    border:1px #c3d825 solid;
+    padding: 5px;
+	text-decoration: none;
+    outline: none;
+}
+ 

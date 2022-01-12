@@ -9,7 +9,8 @@
 <!-- fonts読み込み -->
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
 <!-- css読み込み -->
-<link rel="stylesheet" href="{{ asset('css/user.css') }}">
+<link rel="stylesheet" href="{{ asset('css/common.css') }}">
+<link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
 <style>
     table{
     text-align: center;
@@ -39,7 +40,7 @@
             <div>
             <label for="email">MAIL</label>
                 <div class="col-md-6">
-                    <input type="email" name="email" class="form_textbox" required autocomplete="email" autofocus>
+                    <input type="email" name="email" class="textbox" required autocomplete="email" autofocus>
                     @error('email')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -54,7 +55,7 @@
             <div>
             <label for="password">PASS</label>
                 <div class="col-md-6">
-                <input type="password" name="password" class="form_textbox" required autocomplete="current-password">
+                <input type="password" name="password" class="textbox" required autocomplete="current-password">
                 @error('password')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -80,7 +81,7 @@
         <td>     
             <div class="form-group row mb-0">
                 <div class="col-md-8 offset-md-4">
-                    <button type="submit" class="form_button">ログイン</button>
+                    <button type="submit" class="button">ログイン</button>
                 </div>
             </div>
         </form>
