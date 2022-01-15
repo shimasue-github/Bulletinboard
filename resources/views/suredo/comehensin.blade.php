@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<link rel="stylesheet" href="{{ asset('css/all.css') }}">
+<link rel="stylesheet" href="{{ asset('css/common.css') }}">
 
 
 <table border="1" class="center">

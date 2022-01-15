@@ -4,7 +4,7 @@ var bar = new ProgressBar.Line(field_text, {            //プログレスバー�
   duration: 1000,                                        //時間指定 1000:1秒
   strokeWidth: 1.0,                                      //進捗ゲージの太さ
   trailWidth: 1.0,                                       //ゲージベースの線の太さ
-  trailColor: '#c3d825',                                 //ゲージベースの線のカラー
+  trailColor: '#6fc8c2',                                 //ゲージベースの線のカラー
   text: {                                                //テキストの形状を直接指定       
     style: {            
       position: 'absolute',
@@ -28,7 +28,7 @@ bar.animate(1.0, function () {                           //アニメーション
 
 //particles.js
 particlesJS("particles-js", {"particles":{"number":{"value":80,"density":{"enable":true,"value_area":800}},
-"color":{"value":"#c3d825"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},
+"color":{"value":"#6fc8c2"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},
 "polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},
 "opacity":{"value":0.5,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},
 "size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},
@@ -46,3 +46,4 @@ document.body.appendChild(stats.domElement); count_particles = document.querySel
 update = function() { stats.begin(); stats.end(); 
   if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) 
   { count_particles.innerText = window.pJSDom[0].pJS.particles.array.length; } requestAnimationFrame(update); }; requestAnimationFrame(update);;
+

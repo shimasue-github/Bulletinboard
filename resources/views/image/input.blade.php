@@ -1,18 +1,16 @@
 @extends('layouts.app')
+@extends('layouts.bar')
 @section('content')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-<title>Laravel mypage</title>
-
+<title>マイページ</title>
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-
 <!-- Styles -->
-<link rel="stylesheet" href="{{ asset('css/all.css') }}">
-
-<h1>お気に入り</h1>
-
+<link rel="stylesheet" href="{{ asset('css/common.css') }}">
+</head>
+<body>
 <table  class="center"width="95%" height="80%"><tr><td>
 <table class="center" width="100%" height="80%">
     <form action="/upload" method="POST" enctype="multipart/form-data">
@@ -43,9 +41,6 @@
 
 </td></tr></table>
 
-<a href="{{ route('home') }}"><input type="button" value="トップに戻る"></a>
-
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -65,6 +60,3 @@
 @endsection
 
 
-<header class="line">
-   チェックしたお気に入りと写真アップ画面です。: WELCOME {{ Auth::user()->name}}さん
-</header>

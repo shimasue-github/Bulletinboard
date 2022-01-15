@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<link rel="stylesheet" href="{{ asset('css/all.css') }}">
+<link rel="stylesheet" href="{{ asset('css/common.css') }}">
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="{{ asset('js/all.js') }}"></script>
 <style>

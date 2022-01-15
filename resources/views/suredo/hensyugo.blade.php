@@ -1,6 +1,7 @@
 @extends('layouts.app')
+@extends('layouts.bar')
 @section('content')
-<link rel="stylesheet" href="{{ asset('css/all.css') }}">
+<link rel="stylesheet" href="{{ asset('css/common.css') }}">
   <div>
     <p>以下の内容で更新が完了しました！</p>
 

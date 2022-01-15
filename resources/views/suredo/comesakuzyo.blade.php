@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<link rel="stylesheet" href="{{ asset('css/all.css') }}">
+<link rel="stylesheet" href="{{ asset('css/common.css') }}">
 
 <form method="GET" action="{{ route('Suredo.comesakuzyogo')}}">
   @csrf    

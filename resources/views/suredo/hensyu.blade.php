@@ -1,17 +1,42 @@
 @extends('layouts.app')
+@extends('layouts.bar')
 @section('content')
-<link rel="stylesheet" href="{{ asset('css/all.css') }}">
-
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+<title>業務日報更新</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+<!-- Styles -->
+<style>
+    table{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .nipou_textbox{
+        background-color: transparent;
+        color: #6fc8c2;
+        border:1px #6fc8c2 solid;
+        padding: 5px;  
+        font-size: 18px;
+        outline: none;
+        width: 100% ;
+    }
+</style>
+<link rel="stylesheet" href="{{ asset('css/common.css') }}">
+<link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
+</head>
+<body>
 <form method="POST" action="{{ route('Suredo.hensyugo') }}">
   @csrf
   @if($suredos->count())
-<table width="80%" height="80%" class="center">
+<table width="90%" height="80%">
     <input type="hidden" name="bangou" class="text" value="{{$bangou}}">
     @foreach ($suredos as $suredo)
-    <tr><td>TITLE<br><input type="text" name="taitoru" class="in" value="{{ $suredo->taitoru }}" placeholder="TITLE" required autofocus></td></tr>   
-    <tr><td>NAME<br><input type="text" name="name" class="in"  value="{{ $suredo->name }}" placeholder="NAME"required autofocus></td></tr> 
-    <tr><td>HONBUN<br><input type=textarea name="honbun" class="in" cols="50" rows="10" value="{{ $suredo->honbun }}" placeholder="HONBUN" required autofocus></input></td></tr>
-    <tr><td colspan="2"><input type="submit" name="submit" value="更新"></td></tr>
+    <tr><td>タイトル<br><input type="text" name="taitoru" class="nipou_textbox" value="{{ $suredo->taitoru }}" placeholder="TITLE" required autofocus></td></tr>   
+    <tr><td>氏名<br><input type="text" name="name" class="nipou_textbox"  value="{{ $suredo->name }}" placeholder="NAME"required autofocus></td></tr> 
+    <tr><td>業務内容<br><input name="honbun"  class="textbox" cols="30" rows="10" value="{{ $suredo->honbun }}" placeholder="HONBUN" required autofocus></input></td></tr>
+    <tr><td colspan="2"><input type="submit" name="submit" class="btn">更新</td></tr>
     @endforeach
 </table>
 @else
@@ -19,26 +44,4 @@
 @endif
 </form>
 
-<a href="{{ route('home') }}"><input type="button" class="button" value="トップに戻る"></a>
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header"></div>
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
-
-<header class="line">
-    この画面では記事編集できるよ！ : WELCOME {{ Auth::user()->name}}さん
-</header>
 </body>

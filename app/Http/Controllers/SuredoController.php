@@ -21,8 +21,14 @@ class SuredoController extends Controller
   }
 
   //スレッド作成
-  public function sakusei(){
-    return view('suredo.sakusei');
+  public function sakusei(Request $request){
+
+    // 現在日時を取得する
+    $y = date('Y');
+    $m = date('m');
+    $d = date('d');
+     
+    return view('suredo.sakusei', compact('y','m','d'));
   }
   public function store(Request $request){
     $suredo = new Suredo;
@@ -36,7 +42,8 @@ class SuredoController extends Controller
     $suredo=DB::table('suredos')
       ->whereMonth('created_at', $tuki)
       ->get()->count();
-    return view('home',compact('user','suredo'));
+
+    view('home',compact('user','suredo'));
   }
 
   //スレッド検索
@@ -47,7 +54,7 @@ class SuredoController extends Controller
   public function kensakugo(Request $request)
   { 
     $word = $request['word'];     
-    $query = Suredo::query();
+    $query = Suredo::query();  
      
     if (!empty($word)) {
     $query->where('taitoru', 'LIKE', "$word");    

@@ -69,9 +69,10 @@
 	text-decoration: none;
     font-weight: bold;
 	display: inline-block;
-   	border: 2px solid #c3d825;/* ボーダーの色と太さ */
-    padding: 10px 30px;
-    text-align: center;
+   	border: 1.5px solid #6fc8c2;
+    color: white;
+    background-color: #6fc8c2;
+    padding: 6px 6px;
     outline: none;  
     transition: ease .2s;
     margin: 10px;
@@ -80,7 +81,7 @@
 .btn span {
 	position: relative;
 	z-index: 3;
-	color:#c3d825;
+	color:#white;
 }
 .btn:hover span{
 	color:#fff;
@@ -95,7 +96,7 @@
  	left: 0;
  	z-index: 2;
     /*色や形状*/
- 	background:#c3d8257e;/*背景色*/
+ 	background:#6fc8c2;/*背景色*/
  	width: 100%;
 	height: 100%;
     /*アニメーション*/
@@ -117,7 +118,7 @@
     /*形状*/
     display: inline-block;
 	padding: 0 20px;
-    color: #c3d825;
+    color: #6fc8c2;
     text-decoration: none;
     outline: none;
 }
@@ -130,7 +131,7 @@
     /*下線の形状*/    
     width: 85%;
     height: 1px;
-	background:#c3d825;
+	background:#6fc8c2;
     /*アニメーションの指定*/
     transition: all .3s;
 }
@@ -143,7 +144,7 @@
     /*矢印の形状*/    
     width: 15px;
     height:1px;
-	background:#c3d825;
+	background:#6fc8c2;
     transform: rotate(35deg);
     /*アニメーションの指定*/
     transition: all .3s;

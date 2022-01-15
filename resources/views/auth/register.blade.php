@@ -7,8 +7,8 @@
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
 <!-- css読み込み -->
-<link rel="stylesheet" href="{{ asset('css/common.css') }}">
 <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
+<link rel="stylesheet" href="{{ asset('css/common.css') }}">
 <style>
     table{
         text-align:center;
@@ -28,7 +28,7 @@
         @csrf
             <tr>
                 <td>
-                    名前<br><input id="name" type="text" class="textbox" required autocomplete="name" autofocus>
+                    氏名<br><input id="name" type="text" class="textbox" required autocomplete="name" autofocus>
                     @error('name')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -63,7 +63,7 @@
             </tr>
             <tr>
                 <td class="right">      
-                    <button type="submit" class="button">登録</button>
+                    <button type="submit" class="btn">社員新規登録</button>
                     @endsection
                 </td>
             </tr>

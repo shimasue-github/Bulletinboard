@@ -14,7 +14,7 @@
 <style>
     table{
     text-align: center;
-	color:#c3d825;
+	color:#6fc8c293;
     height: 270px;
     width: 350px;
     }
@@ -32,6 +32,7 @@
 <table width="80%" height="100%" >
     <tr>
         <td>
+            <div class="logo"><img src="{{ asset('image/logo.png') }}" width=150px height=150px" style=" margin-top:-100px;"><br></div>
             <h1>LOGIN</h1>
         </td>
     </tr>

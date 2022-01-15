@@ -11,7 +11,7 @@
 <style>
     table{
     text-align: center;
-    color:#c3d825;
+    color:#6fc8c293;
     height: 40px;
     margin-top:70% ;
     margin-left: auto;

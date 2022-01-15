@@ -9,20 +9,6 @@
 <!-- css読み込み -->
 <link rel="stylesheet" href="{{ asset('css/common.css') }}">
 <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
-<style>
-    @media screen and (max-width: 480px){
-        .button{
-            width:200px;
-            height:40px;
-        }
-    }
-    @media screen and (min-width: 481px){
-        .button{
-            width:200px;
-            height:40px;
-        }
-    }
-</style>
 </head>
 <body>
     <div id="field">
@@ -36,8 +22,9 @@
             <table width="100%">
                 <tr>
                     <td>
-                        <p><a href="{{ route('login') }}" class="btn"><span>ログイン</span></a></p>
-                        <p><a href="{{ url('/send') }}" class="btn"><span>新規会員登録</span></a></p>
+                        <div class="logo"><img src="{{ asset('image/elephant.png') }}" width=150px height=150px  style="margin-right:26px;"><br></div>
+                        <a href="{{ route('login') }}" class="btn"><span>ログイン</span></a>
+                        <a href="{{ url('/send') }}" class="btn"><span>新規社員登録</span></a>
                     </td>
                 </tr>
             </table>

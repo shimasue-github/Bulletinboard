@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<link rel="stylesheet" href="{{ asset('css/all.css') }}">
+<link rel="stylesheet" href="{{ asset('css/common.css') }}">
 
 <h1 class="taitoru">記事削除</h1>
 <p>以下の記事を本当に削除してよろしいですか？</p>

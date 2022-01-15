@@ -3,19 +3,16 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-<title>Laravel kensaku</title>
-
+<title>検索結果</title>
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-
 <!-- Styles -->
-<link rel="stylesheet" href="{{ asset('css/all.css') }}">
-
+<link rel="stylesheet" href="{{ asset('css/common.css') }}">
 <table class="back">
     <tr><td>
         <form method="GET" action="{{ route('Suredo.kensakugo') }}">
-        <input type="text" class="textblack" name="word" placeholder="word" required autofocus><br>
-        <input type="submit" class="blackbutton" value="スレッド検索">
+            <input type="date" class="textbox" name="word" required autofocus>
+            <input type="submit" class="button" value="業務日報検索">
         </form>
     </td></tr>
 </table>
@@ -29,7 +26,7 @@
     <tr class="tdtop"><td>{{ $suredo->taitoru }}</td>
         <td class="td">{{ $suredo->name }}</td>
         <td class="td">{{ $suredo->honbun }}</td>
-        <td><input type="submit" class="whitebutton" value="詳細">
+        <td><input type="submit" class="button" value="詳細">
     </tr>
     </form>
     @endforeach
@@ -57,5 +54,5 @@
 @endsection
 
 <header class="line">
-    {{$word}} で検索したよ！ : WELCOME {{ Auth::user()->name}}さん
+    {{$word}} 業務日報 : WELCOME {{ Auth::user()->name}}さん
 </header>

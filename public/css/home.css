@@ -1,0 +1,160 @@
+
+p{
+    color: #6fc8c2;
+    margin-left: 29px;
+    margin-right: auto;
+    padding: 2px;
+    background-color: #fff;
+}
+.nav_button{
+    background-color: white;
+    color: #6fc8c2;
+    border:1px white solid;
+    border-radius: 2px;
+    padding: 5px;  
+    font-size: 14px;
+	text-decoration: none;
+    outline: none;
+}
+.nav_textbox{
+    background-color: white;
+    color: rgba(0, 0, 0, 0.589);
+    border:0px #6fc8c2 solid;
+    padding: 5px;  
+    font-size: 14px;
+    outline: none;
+}
+.logo{
+    width:120px;
+    height:120px;
+    text-align:center;
+    margin-left: auto;
+    margin-right: auto;
+}
+body{
+    background-color:white; 
+}
+.menu_bar{
+    margin-top:33px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.kensaku_textbox{
+background-color: transparent;
+border:1px solid #6fc8c293 ; ;
+color: #fff;
+cursor: pointer;
+outline: none;
+padding: 5px;
+appearance: none;
+border:1px #6fc8c293 solid;
+width: 309px;
+height: 50px;
+font-size: 18px;
+}
+.kensaku_button{
+    background-color:#6fc8c293 ; 
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 5px;
+    appearance: none;
+    border:1px #6fc8c293 solid;
+    width: 320px;
+    height: 50px;
+}
+.menubutton{
+    background-color: white;
+    color: #6fc8c293;
+    width: 30px;
+    height: 80px;
+    border-radius: 1px;
+    margin-top: 5px;
+}
+/*========= ナビゲーションのためのCSS ===============*/
+#g-nav{
+    /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+    position:fixed;
+    z-index: 999;
+    /*ナビのスタート位置と形状*/
+	bottom:-120%;
+    left:0;
+	width: 100%;
+    height: 30%;
+    background : #6fc8c2;
+    /*動き*/
+	transition: all 0.6s;
+}
+/*アクティブクラスがついたら位置を0に*/
+#g-nav.panelactive{
+    bottom: 0;
+}
+
+/*ナビゲーションの縦スクロール*/
+#g-nav.panelactive #g-nav-list{
+    /*ナビの数が増えた場合縦スクロール*/
+    position: fixed;
+    z-index: 999; 
+    width: 100%;
+    height: 100vh;/*表示する高さ*/
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+a{
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+}
+/*========= ボタンのためのCSS ===============*/
+.openbtn{
+	position:fixed;
+    z-index: 9999;/*ボタンを最前面に*/
+	top:10px;
+	right: 10px;
+	cursor: pointer;
+    width: 50px;
+    height:50px;
+}
+
+/*×に変化*/	
+.openbtn span{
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+	background-color: #6fc8c293;
+  	width: 45%;
+  }
+
+.openbtn span:nth-of-type(1) {
+	top:15px;	
+}
+
+.openbtn span:nth-of-type(2) {
+	top:23px;
+}
+
+.openbtn span:nth-of-type(3) {
+	top:31px;
+}
+
+.openbtn.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+}
+
+.openbtn.active span:nth-of-type(2) {
+	opacity: 0;
+}
+
+.openbtn.active span:nth-of-type(3){
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+}

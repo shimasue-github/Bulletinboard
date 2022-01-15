@@ -58,3 +58,6 @@ Route::get('/okini', 'ImageController@okini')->name('okini');
 Route::get('/okinigo', 'ImageController@okinigo')->name('okinigo');
 Route::get('/okiniiri', 'HomeController@okiniiri')->name('okiniiri');
 
+//会社概要
+Route::get('/overview', 'EtcController@overview')->name('overview');
+
