@@ -27,11 +27,14 @@
         </tr>
         <tr>
             <td class="menubutton">
-                <a href="{{ route('Suredo.sakusei') }}"><span class="menubutton">日報業務</span></a>  
+                <a href="{{ route('kintai') }}"><span class="menubutton">勤怠</span></a>  
             </td>
             <td class="menubutton">
-                <a href="{{ route('Image.input') }}"><span class="menubutton">設定</span></a> 
+                <a href="{{ route('Suredo.sakusei') }}"><span class="menubutton">日報業務</span></a>  
             </td>
+            {{-- <td class="menubutton">
+                <a href="{{ route('Image.input') }}"><span class="menubutton">設定</span></a> 
+            </td> --}}
             <td class="menubutton">
                 <a href="{{ route('overview') }}"><span class="menubutton">会社概要</span></a>   
             </td>

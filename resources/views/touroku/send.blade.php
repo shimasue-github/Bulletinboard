@@ -12,34 +12,23 @@
 <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
 <link rel="stylesheet" href="{{ asset('css/common.css') }}">
 <style>
-    @media screen and (max-width: 480px){
-        table{
-            text-align: center;
-            colo:#6fc8c293;
-            height: 40px;
-            margin-top:70% ;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
+    table{
+        text-align: center;
+        height: 40px;
+        margin-top:70% ;
+        margin-left: auto;
+        margin-right: auto;
     }
-    @media screen and (min-width: 481px){
-
-        table{
-            text-align: center;
-            color:#6fc8c293;
-            height: 40px;
-            margin-top:330px ;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    .textbox{
+        width : 80%;
     }
 </style>
 </head>
 <body>
-    <table>
+    <table width="100%">
         <tr>
             <td>
+                <div class="logo"><img src="{{ asset('image/mail.png') }}" width=150px height=150px" style=" margin-top:-100px;"><br></div>
                 <form method="GET" action="{{ route('sendgo') }}">
                 @csrf
                 <input type="text" name="mail" class="textbox">

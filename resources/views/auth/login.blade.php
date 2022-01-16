@@ -3,99 +3,96 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-<title>LOGIN</title>
+<title>ログイン画面</title>
 <!-- レスポンシブ対応読み込み -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <!-- fonts読み込み -->
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
 <!-- css読み込み -->
 <link rel="stylesheet" href="{{ asset('css/common.css') }}">
-<link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
+<link rel="stylesheet" href="{{ asset('css/home.css') }}">
 <style>
     table{
     text-align: center;
-	color:#6fc8c293;
     height: 270px;
     width: 350px;
-    }
-    form{
-    display: flex;
-    justify-content: center;
-    text-align: center;
     margin-top: 200px;
+    }
+    .textbox{
+        width : 80%;
     }
 </style>
 </head> 
 <body>
 <form method="POST" action="{{ route('login') }}">
 @csrf
-<table width="80%" height="100%" >
-    <tr>
-        <td>
-            <div class="logo"><img src="{{ asset('image/logo.png') }}" width=150px height=150px" style=" margin-top:-100px;"><br></div>
-            <h1>LOGIN</h1>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <div>
-            <label for="email">MAIL</label>
-                <div class="col-md-6">
-                    <input type="email" name="email" class="textbox" required autocomplete="email" autofocus>
-                    @error('email')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div>
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <div>
-            <label for="password">PASS</label>
-                <div class="col-md-6">
-                <input type="password" name="password" class="textbox" required autocomplete="current-password">
-                @error('password')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-                </div>
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td> 
-            <div class="form-group row">
-                <div class="col-md-6 offset-md-4">
-                    <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                    <label class="form-check-label" for="remember">ログイン情報を記録</label>
+    <table width="80%" height="100%" >
+        <tr>
+            <td>
+                <div class="logo"><img src="{{ asset('image/logo.png') }}" width=150px height=150px" style=" margin-top:-100px;"><br></div>
+                <h1>LOGIN</h1>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                <label for="email">MAIL</label>
+                    <div class="col-md-6">
+                        <input type="email" name="email" class="textbox" required autocomplete="email" autofocus>
+                        @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                 </div>
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td>     
-            <div class="form-group row mb-0">
-                <div class="col-md-8 offset-md-4">
-                    <button type="submit" class="button">ログイン</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                <label for="password">PASS</label>
+                    <div class="col-md-6">
+                    <input type="password" name="password" class="textbox" required autocomplete="current-password">
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                    </div>
                 </div>
-            </div>
-        </form>
-        </td>
-    <tr>
-        <td>
-            @if (Route::has('password.request'))
-            <a  class="btnarrow4" href="{{ route('password.request') }}" style="margin-left: 63px;top: 18px;">
-            パスワードを忘れてしまった方はこちら
-            </a>
-            @endif
-            @endsection
-        </td>
-    </tr>
-</table>
+            </td>
+        </tr>
+        <tr>
+            <td> 
+                <div class="form-group row">
+                    <div class="col-md-6 offset-md-4">
+                        <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                        <label class="form-check-label" for="remember">ログイン情報を記録</label>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>     
+                <div class="form-group row mb-0">
+                    <div class="col-md-8 offset-md-4">
+                        <button type="submit" class="button">ログイン</button>
+                    </div>
+                </div>
+            </form>
+            </td>
+        <tr>
+            <td>
+                @if (Route::has('password.request'))
+                <a  class="btnarrow4" href="{{ route('password.request') }}" style="margin-left: 63px;top: 18px;">
+                パスワードを忘れてしまった方はこちら
+                </a>
+                @endif
+                @endsection
+            </td>
+        </tr>
+    </table>
 </body>

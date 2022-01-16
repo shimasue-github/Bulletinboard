@@ -11,6 +11,7 @@ Route::get('/', function () {return view('welcome');});
 
 //HomeController ユーザートップ画面
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/kintai', 'KintaiController@kintai')->name('kintai');
 
 //★★★TourokuController
 

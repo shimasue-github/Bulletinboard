@@ -81,7 +81,7 @@
 .btn span {
 	position: relative;
 	z-index: 3;
-	color:#white;
+	color:white;
 }
 .btn:hover span{
 	color:#fff;
@@ -108,50 +108,4 @@
 .welcome:hover:before{
 	transform-origin:left top;
 	transform:scale(1, 1);
-}
-
-
-
-.btnarrow4{
-    /*矢印と下線の基点とするためrelativeを指定*/
-	position: relative;
-    /*形状*/
-    display: inline-block;
-	padding: 0 20px;
-    color: #6fc8c2;
-    text-decoration: none;
-    outline: none;
-}
-.btnarrow4::before{
-    content: '';
-    /*絶対配置で下線の位置を決める*/
-	position: absolute;
-    bottom:-8px;
-    left:15%;
-    /*下線の形状*/    
-    width: 85%;
-    height: 1px;
-	background:#6fc8c2;
-    /*アニメーションの指定*/
-    transition: all .3s;
-}
-.btnarrow4::after{
-    content: '';
-    /*絶対配置で矢印の位置を決める*/
-	position: absolute;
-    bottom:-3px;
-    right:0;
-    /*矢印の形状*/    
-    width: 15px;
-    height:1px;
-	background:#6fc8c2;
-    transform: rotate(35deg);
-    /*アニメーションの指定*/
-    transition: all .3s;
-}
-.btnarrow4:hover::before{
-    left:20%;
-}
-.btnarrow4:hover::after{
-    right:-5%;
 }

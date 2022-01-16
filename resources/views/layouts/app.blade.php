@@ -23,9 +23,6 @@
             <ul class="navbar-nav ml-auto"></ul>
             <!-- Authentication Links -->
             @guest
-            <a class="nav-item">
-                <a id="podisyon" href="{{ route('login') }}">ログイン</a>
-            </a>
             @if (Route::has('register'))
             @endif
             @else
@@ -34,10 +31,10 @@
         
             </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a id="podisyon" href="{{ route('logout') }}" class="whitebutton" onclick="event.preventDefault();
+                {{-- <a id="podisyon" href="{{ route('logout') }}" class="whitebutton" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
                     ログアウト
-                </a>
+                </a> --}}
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
