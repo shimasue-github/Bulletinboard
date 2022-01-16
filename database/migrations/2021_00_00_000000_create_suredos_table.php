@@ -11,11 +11,12 @@ class CreateSuredosTable extends Migration
     public function up()
     {
         Schema::create('suredos', function (Blueprint $table) {
-            $table->bigIncrements('bangou');
-            $table->string('taitoru');
-            $table->string('name');
-            $table->string('honbun');
-            $table->softDeletes();
+            $table->bigIncrements('bangou')->comment('番号');
+            $table->string('taitoru')->comment('タイトル');
+            $table->string('mail')->comment('メール');
+            $table->string('name')->comment('名前');
+            $table->string('honbun')->comment('本文');
+            $table->softDeletes()->comment('物理削除');
             $table->timestamps();
         });
     }

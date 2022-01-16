@@ -23,8 +23,9 @@ table{
     background-color: transparent;
     color: #6fc8c2;
     border:1px #6fc8c2 solid;
+    width: auto;
     padding: 5px;  
-    font-size: 15px;
+    font-size: 10px;
     outline: none;
 }
 .button{
@@ -37,11 +38,11 @@ table{
    	border: 1px solid #6fc8c2;
     color: white;
     background-color: #6fc8c2;
-    padding: 2px 2px;
+    padding: 3px 3px;
     outline: none;  
     transition: ease .2s;
     margin: 10px;
-    width: 50px;
+    width: auto;
 }
 
 

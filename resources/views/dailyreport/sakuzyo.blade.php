@@ -5,14 +5,14 @@
 <h1 class="taitoru">記事削除</h1>
 <p>以下の記事を本当に削除してよろしいですか？</p>
 
-<form method="GET" action="{{ route('Suredo.sakuzyosuru') }}">
-  @if($suredos->count())
+<form method="GET" action="{{ route('Dailyreport.sakuzyosuru') }}">
+  @if($reports->count())
 <table>
-    @foreach ($suredos as $suredo)
-    <tr><td>タイトル</td><td><input type="text" name="taitoru" class="text" value="{{ $suredo->taitoru }}"></td></tr>
+    @foreach ($reports as $report)
+    <tr><td>タイトル</td><td><input type="text" name="taitoru" class="text" value="{{ $report->day }}"></td></tr>
     <tr><td>番号</td><td><input type="text" name="bangou" class="text" value="{{$bangou}}"></td></tr>
-    <tr><td>名前</td><td><input tppe="text" name="name" class="text" value="{{ $suredo->name }}"</td></tr>
-    <tr><td>本文</td><td><input type="text" name="honbun" class="text" value="{{ $suredo->honbun }}"></td></tr>
+    <tr><td>名前</td><td><input tppe="text" name="name" class="text" value="{{ $report->name }}"</td></tr>
+    <tr><td>本文</td><td><input type="text" name="honbun" class="text" value="{{ $report->allcontent }}"></td></tr>
     <tr><td colspan="2"><input type="submit" name="submit" value="削除"></td></tr>
     @endforeach
 </table>

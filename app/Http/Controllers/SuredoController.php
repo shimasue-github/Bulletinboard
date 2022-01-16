@@ -1,6 +1,5 @@
 <?php
-//コマンド(作成) php artisan make:controller SuredoController
-//デフォルトでブレードの{{ }}文はXSS攻撃を防ぐ htmlspecialchars関数を自動的。
+//業務日報コントローラー
 
 namespace App\Http\Controllers;
 
@@ -19,33 +18,6 @@ class SuredoController extends Controller
   public function __construct(){
     $this->middleware('auth');
   }
-
-  //スレッド作成
-  public function sakusei(Request $request){
-
-    // 現在日時を取得する
-    $y = date('Y');
-    $m = date('m');
-    $d = date('d');
-     
-    return view('suredo.sakusei', compact('y','m','d'));
-  }
-  public function store(Request $request){
-    $suredo = new Suredo;
-    $suredo->fill($request->all())->save();
-    
-    $tuki=Carbon::now()->startOfMonth();
-
-    $user=DB::table('users')
-      ->whereMonth('created_at', $tuki)
-      ->get()->count();
-    $suredo=DB::table('suredos')
-      ->whereMonth('created_at', $tuki)
-      ->get()->count();
-
-    view('home',compact('user','suredo'));
-  }
-
   //スレッド検索
   public function kensaku()
   {
@@ -64,7 +36,6 @@ class SuredoController extends Controller
      
     return view('suredo.kensakugo', compact('word','suredos'));
   }
-
   //スレッド詳細
   public function syousai(Request $request)
   {     
@@ -83,7 +54,6 @@ class SuredoController extends Controller
 
     return view('suredo.syousai',compact('bangou','suredos','comes'));
   }
-
   //コメントを表示
   public function syousaigo(Request $request)
   {
@@ -107,78 +77,6 @@ class SuredoController extends Controller
     $comes = $query->get();
 
     return view('suredo.syousaigo',compact('bangou','suredos','comes'));
-  }
-
-  //スレッド一覧
-  public function itiran(Request $request){
-
-  //番号を取得しスレッドを表示  
-  $bangou = $request['bangou'];
-  $query = Suredo::query();
-  if (!empty($bangou)) {
-  $query->where('name', 'LIKE', "$bangou");   
-  }
-  $suredos = $query->get();
- 
-  return view('suredo.itiran',compact('bangou','suredos'));
-  }
-
-  //スレッド編集
-  public function hensyu(Request $request)
-  {   
-    $bangou = $request['bangou'];
-
-    $query = Suredo::query();
-    if (!empty($bangou)) {
-    $query->where('bangou', 'LIKE', "$bangou");   
-    }
-    $suredos = $query->get();
-
-    return view('suredo.hensyu',compact('bangou','suredos'));
-  }
-  //スレッド編集完了画面
-  public function hensyugo(Request $request){
-    $bangou = $request['bangou'];
-    $taitoru = $request['taitoru'];
-    $name = $request['name'];
-    $honbun = $request['honbun'];
-    
-    //取得したデータで更新
-    $suredos = Suredo::where('bangou', $bangou)->get();
-
-    foreach ($suredos as $suredo) {
-
-    $suredo->taitoru = $taitoru;
-    $suredo->honbun = $honbun;
-    $suredo->save();
-    }
-    return view('suredo.hensyugo',compact('bangou','taitoru','name','honbun'));
-  }
-  //スレッド削除
-  public function sakuzyo(Request $request)
-  {
-    $bangou = $request['bangou'];
-
-    $query = Suredo::query();
-    if (!empty($bangou)) {
-    $query->where('bangou', 'LIKE', "$bangou");   
-    }
-    $suredos = $query->get();
-    return view('suredo.sakuzyo',compact('bangou','suredos'));
-  }
-  public function sakuzyosuru(Request $request){
-    $bangou = $request['bangou'];
-    $user = Suredo::find($bangou);
-    $user->delete();
-
-    $tuki=Carbon::now()->startOfMonth();
-    $user=DB::table('users')
-      ->whereMonth('created_at', $tuki)
-      ->get()->count();
-    $suredo=DB::table('suredos')
-      ->whereMonth('created_at', $tuki)
-      ->get()->count();
-    return view('home',compact('user','suredo'));
   }
 
   //コメント編集

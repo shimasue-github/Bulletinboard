@@ -1,17 +1,24 @@
 <?php
-//コマンド(ルート確認) php artisan list
 
-//認証機能ルートまとめ Illuminate\Support\Facades\Auth.php
+//認証機能
 Auth::routes();
 
-//サイトトップ画面
+//トップ画面・ユーザートップ画面
 Route::get('/', function () {return view('welcome');});
-
-//★★★HomeController
-
-//HomeController ユーザートップ画面
 Route::get('/home', 'HomeController@index')->name('home');
+
+//業務日報  作成・編集・削除
+Route::get('/dailyreport/sakusei', 'DailyreportController@sakusei')->name('Dailyreport.sakusei');
+Route::post('/dailyreport/store', 'DailyreportController@store')->name('Dailyreport.store');
+Route::get('/dailyreport/itiran', 'DailyreportController@itiran')->name('Dailyreport.itiran');
+Route::get('/dailyreport/hensyu', 'DailyreportController@hensyu')->name('Dailyreport.hensyu');
+Route::post('/dailyreport/hensyugo', 'DailyreportController@hensyugo')->name('Dailyreport.hensyugo');
+Route::get('/dailyreport/sakuzyo', 'DailyreportController@sakuzyo')->name('Dailyreport.sakuzyo');
+Route::get('/dailyreport/sakuzyosuru', 'DailyreportController@sakuzyosuru')->name('Dailyreport.sakuzyosuru');
+
+//勤怠
 Route::get('/kintai', 'KintaiController@kintai')->name('kintai');
+
 
 //★★★TourokuController
 
@@ -21,23 +28,11 @@ Route::get('/sendgo', 'TourokuController@sendgo')->name('sendgo');
 
 //★★★SuredoController
 
-//SuredoController スレッド作成画面
-Route::get('/suredo/sakusei', 'SuredoController@sakusei')->name('Suredo.sakusei');
-Route::post('/suredo/store', 'SuredoController@store')->name('Suredo.store');
-//SuredoController スレッド更新画面
-Route::get('/suredo/hensyu', 'SuredoController@hensyu')->name('Suredo.hensyu');
-Route::post('/suredo/hensyugo', 'SuredoController@hensyugo')->name('Suredo.hensyugo');
-//SuredoController スレッド削除画面
-Route::get('/suredo/sakuzyo', 'SuredoController@sakuzyo')->name('Suredo.sakuzyo');
-Route::get('/suredo/sakuzyosuru', 'SuredoController@sakuzyosuru')->name('Suredo.sakuzyosuru');
 //SuredoController スレッド詳細
 Route::get('/suredo/syousai', 'SuredoController@syousai')->name('Suredo.syousai');
 Route::get('/suredo/syousaigo', 'SuredoController@syousaigo')->name('Suredo.syousaigo');
-//SuredoController スレッド一覧
-Route::get('/suredo/itiran', 'SuredoController@itiran')->name('Suredo.itiran');
 //SuredoController 検索画面
 Route::get('/suredo/kensakugo', 'SuredoController@kensakugo')->name('Suredo.kensakugo');
-
 //SuredoController コメント更新画面
 Route::get('/suredo/comehensyu', 'SuredoController@comehensyu')->name('Suredo.comehensyu');
 Route::post('/suredo/comehensyugo', 'SuredoController@comehensyugo')->name('Suredo.comehensyugo');
